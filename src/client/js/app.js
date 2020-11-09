@@ -16,20 +16,21 @@ function hideForm(){
 
 /* Takes user input and submit form, then display API responses */
 function saveTrip(){
-    console.log("Trying to save trip....");
     const data = {
         city: document.getElementById("city").value,
         state: document.getElementById("state").value,
-        country: document.getElementById("country").value
+        country: document.getElementById("country").value,
+        start: document.getElementById("trip-start").value,
+        end: document.getElementById("trip-end").value
     }
     postData(data)
-    .then(function(res){
-        console.log(res);
+    .then(function(res){  
         addTripToPage(res);
     })
 }
 
 function addTripToPage(res){
+    console.log(JSON.stringify(res));
     hideForm();
 }
 /************************************
