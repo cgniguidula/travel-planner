@@ -1,6 +1,5 @@
 function buildTripCard(res, removeTrip){
 
-    console.log("CALLED ME");
     const fragment = document.createDocumentFragment();
 
     //create trip card

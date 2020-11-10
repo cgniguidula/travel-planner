@@ -13,6 +13,10 @@ module.exports = {
     optimization: {
         minimizer: [new TerserPlugin({})],
     },
+    output:{
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {

@@ -61,15 +61,17 @@ app.post('/submitForm', function (req, res) {
 
             getWeather(info[0].lat, info[0].lng, start, end)
             .then(function(weather_data){
-
                 newTrip.weather.minTemp = weather_data.min_temp;
                 newTrip.weather.maxTemp = weather_data.max_temp;
 
                 getPicture(city)
                 .then(function(pic_data){
-
-                    newTrip.imgUrl = pic_data;
-
+                    if(pic_data != ""){
+                        newTrip.imgUrl = pic_data;
+                    } else {
+                        //backup picture
+                        newTrip.imgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTWVY6O_pkdFkG7auZXzfxqNP73jbOLU1dVQ&usqp=CAU"
+                    }
                     const res_data = {
                         status: "success",
                         info: newTrip
@@ -85,8 +87,10 @@ app.post('/submitForm', function (req, res) {
         }    
    })
 
-
 });
+
+
+
 
 //Gets geonames data 
 const getGeonamesData = async function(city, state, country){
@@ -99,7 +103,7 @@ const getGeonamesData = async function(city, state, country){
             const data = await response.json();
             return data;
         } catch (error) {
-            console.log("AN ERROR OCCURRED: " + error);
+            console.log("Could not fetch info from Geonames: " + error);
         }
     } else{
         const response = await fetch(baseUrl +urlEnd);
@@ -107,7 +111,8 @@ const getGeonamesData = async function(city, state, country){
             const data = await response.json();
             return data;
         } catch (error) {
-            console.log("AN ERROR OCCURRED: " + error);
+            console.log("Could not fetch info from Geonames: " + error);
+            return {};
         }
     }
 }
@@ -127,7 +132,11 @@ const getWeather = async function(lat, lon, start_date, end_date){
         }
         return data;
     } catch (error) {
-        console.log("There was an error getting weather information")
+        console.log("There was an error getting weather information");
+        return {
+            max_temp: "",
+            min_temp: ""
+        };
     }
 }
 
@@ -139,13 +148,14 @@ const getPicture = async function(city){
         const res = await response.json();
         if(res.totalHits > 0 ){
             return res.hits[0].webformatURL;
+            
         } else {
             return ""
         }
     } catch (error) {
         console.log("There was an error with the Pixabay API");
+        return ""
     }
 }
-
 
 
