@@ -86,10 +86,7 @@ app.post('/submitForm', function (req, res) {
             res.send({status: "Could not find results for that location", info: {}});
         }    
    })
-
 });
-
-
 
 
 //Gets geonames data 

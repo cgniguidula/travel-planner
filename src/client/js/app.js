@@ -67,7 +67,6 @@ const postData = async function(data = {}){
     });
     try{
         const data = await response.json();
-        alert(JSON.stringify(data));
         return data;
     } catch(error){
         console.log("There was an error: " + error);

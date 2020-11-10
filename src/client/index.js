@@ -1,5 +1,5 @@
 import { init } from './js/app'
-import { buildTripCard } from './js/card-builder'
+import { buildTripCard } from './js/cardBuilder'
 
 import './styles/design.scss'
 import './styles/main.scss'
