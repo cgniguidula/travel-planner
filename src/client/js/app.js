@@ -29,8 +29,14 @@ function saveTrip(){
     })
 }
 
+const removeTrip = function(tripId){
+    console.log("Removing trip " + tripId);
+    
+}
+
 function addTripToPage(res){
-    console.log(JSON.stringify(res));
+
+    Client.buildTripCard(res, removeTrip);
     hideForm();
 }
 /************************************

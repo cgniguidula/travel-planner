@@ -38,6 +38,7 @@ app.post('/submitForm', function (req, res) {
     const country = req.body.country;
 
     let newTrip = {
+        tripId: tripId,
         tripName: "Trip to " + city,
         city: city,
         state: state,
@@ -73,9 +74,8 @@ app.post('/submitForm', function (req, res) {
                         status: "success",
                         info: newTrip
                     }
-                        
-                    tripId = tripId + 1;
                     projectData[tripId] = res_data;
+                    tripId = tripId + 1;
                     res.send(res_data);
                 });
             });
