@@ -23,16 +23,19 @@
             <form id="new-trip-form">
                 <h3>New trip</h3>
                 <input class="form-field" type="text" name="input" value="" id="city" placeholder="City">
-                <input class="form-field" type="text" name="input" value="" id="state" placeholder="State (Optional)">
+                <input class="form-field" type="text" name="input" value="" id="state" placeholder="State (Optional, abbreviations only)">
                 <input list="country-list" id="country" placeholder="Country">
                 <datalist id="country-list"></datalist>
                 <input class="form-field" type="date" name="input" value="" id="trip-start" placeholder="Departure date">
                 <input class="form-field" type="date" name="input" value="" id="trip-end" placeholder="Return date">
             </form>
-            <button class="form-btn" id="cancel-btn">Cancel</button>
-            <button class="form-btn" id="save-btn">Save</button>
+            <div id="form-btns">
+                <button class="form-btn" id="cancel-btn">Cancel</button>
+                <button class="form-btn" id="save-btn">Save</button>
+            </div>
         </section>
-        <section id="trips-list"></section>
+        <section id="trips-list">
+        </section>
     </main>
 
     <footer>    </footer>

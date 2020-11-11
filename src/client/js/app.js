@@ -20,12 +20,14 @@ function hideForm(){
 }
 
 /* Takes user input and submit form, then display API responses */
+/* Note country name is mapped to the ISO code, which is what the */ 
+/* GEO names API needs *******************************************/
 function saveTrip(){
 
     const data = {
         city: document.getElementById("city").value,
         state: document.getElementById("state").value,
-        country: map[document.getElementById("country").value.toLowerCase()],
+        country: map[document.getElementById("country").value.toLowerCase()], 
         start: document.getElementById("trip-start").value,
         end: document.getElementById("trip-end").value
     }
@@ -72,7 +74,6 @@ const postData = async function(data = {}){
         console.log("There was an error: " + error);
     }
 }
-
 
 
 function buildCountryPicker(){

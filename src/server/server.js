@@ -52,6 +52,8 @@ app.post('/submitForm', function (req, res) {
         imgUrl: ""
     };
     
+    const startDay = start.slice(5);
+    const endDay = end.slice(5);
 
     getGeonamesData(city, state, country)
     .then(function(geonames_data){
@@ -59,7 +61,7 @@ app.post('/submitForm', function (req, res) {
         const info = geonames_data.postalCodes;
         if(info.length > 0){
 
-            getWeather(info[0].lat, info[0].lng, start, end)
+            getWeather(info[0].lat, info[0].lng, startDay, endDay)
             .then(function(weather_data){
                 newTrip.weather.minTemp = weather_data.min_temp;
                 newTrip.weather.maxTemp = weather_data.max_temp;
