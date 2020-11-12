@@ -45,14 +45,6 @@ function buildTripCard(res, removeTrip){
         weather.innerHTML = "No weather information could be found. Best to pack layers!!"
     }
 
-    const buttons = document.createElement("div");
-    buttons.classList.add("card-btns");
-    const remove = document.createElement("button");
-    remove.innerHTML = "Remove"
-    remove.classList.add("card-btn");
-    remove.addEventListener("click", function(){removeTrip(res.info.tripId)});
-    buttons.appendChild(remove);
-
     //Now append all trip info to trip info div
     tripInfo.appendChild(name);
     tripInfo.appendChild(place);

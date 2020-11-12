@@ -44,10 +44,6 @@ function saveTrip(){
 **************** Adds/removes trip from page *****************/
 /*************************************************************/
 
-const removeTrip = function(tripId){
-    console.log("Removing trip " + tripId);
-
-}
 
 function addTripToPage(res){
     Client.buildTripCard(res, removeTrip);
@@ -110,4 +106,4 @@ const init = function(){
     buildCountryPicker();
 }
 
-export { init }
+export { init, showForm }

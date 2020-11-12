@@ -15,8 +15,8 @@
 
     #new-trip-section{
         width: 80vw;
+        left: 10%;
     }
-    
 }
 
 /* larger tablet and desktop */
@@ -39,10 +39,10 @@
     }
 
     #new-trip-section{
-        width: 60vh;
+        width: 50vw;
+        left: 25%;
     }
 }
-
 
 /* Resolution agnostic styling*/
 
@@ -55,7 +55,6 @@
     border:0.16em solid var(--accent-color-5);
     color: var(--accent-color-5);
     box-sizing: border-box;
-    left: 10%;
     position: fixed;
 }
 

@@ -15,6 +15,7 @@ const cors = require('cors');
 app.use(cors());
 
 const fetch = require("node-fetch");
+const { ModuleFilenameHelpers } = require('webpack');
 
 //Spin up server
 app.listen(8000, function(){
@@ -142,6 +143,7 @@ const getWeather = async function(lat, lon, start_date, end_date){
 //Get Pixabay data
 const getPicture = async function(city){
     const baseUrl = "https://pixabay.com/api/?key=" + process.env.PIXABAY_KEY + "&q=" + encodeURI(city) + "&orientation=horizontal&image_type=photo";
+  
     const response = await fetch(baseUrl);
     try{
         const res = await response.json();
@@ -158,3 +160,4 @@ const getPicture = async function(city){
 }
 
 
+module.exports = { getPicture, getWeather }
