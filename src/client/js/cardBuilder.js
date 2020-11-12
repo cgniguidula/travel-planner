@@ -1,5 +1,5 @@
 
-function buildTripCard(res, removeTrip){
+function buildTripCard(res){
 
     const fragment = document.createDocumentFragment();
 
@@ -51,7 +51,6 @@ function buildTripCard(res, removeTrip){
     tripInfo.appendChild(dates);
     tripInfo.appendChild(countdown);
     tripInfo.appendChild(weather);
-    tripInfo.appendChild(buttons);
 
     //append everything to the tripcard
     tripCard.appendChild(tripImg);

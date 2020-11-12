@@ -46,7 +46,7 @@ function saveTrip(){
 
 
 function addTripToPage(res){
-    Client.buildTripCard(res, removeTrip);
+    Client.buildTripCard(res);
     hideForm();
 }
 
