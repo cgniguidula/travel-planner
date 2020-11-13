@@ -1,9 +1,9 @@
 # Running the code
 Similar to Project 4, I am using a git ignore file and storing my API credentials in a .env to avoid publishing my private API keys on the internet. To run this code, after cloning the repo you will need to create your own .env file in the project root and add 3 variables with your credentials: 
 
-GEONAMES_USERNAME = <Your Geonames username here>
-WEATHERBIT_KEY = <weatherbit API key>
-PIXABAY_KEY = <Pixabay API key>
+GEONAMES_USERNAME = *Your Geonames username here*
+WEATHERBIT_KEY = *Your weathbit API key here*
+PIXABAY_KEY = *Your Pixabay API key here*
 
 Then, use 'npm install' to install all dependencies. Use 'npm run build-dev' to run the project in development mode and 'npm run build-prod' to run the project in production.
 
